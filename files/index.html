@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedSwiff — The AI Workforce for Modern Clinics</title>
+<meta name="description" content="MedSwiff automates calls, appointment scheduling, follow-ups, patient communication, and repetitive clinic workflows with AI.">
+<meta property="og:title" content="MedSwiff — The AI Workforce for Modern Clinics">
+<meta property="og:description" content="MedSwiff automates calls, appointment scheduling, follow-ups, patient communication, and repetitive clinic workflows with AI.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 22C9 22 9 10 15 10C20 10 20 22 26 22' stroke='%2331D2C1' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='4' cy='22' r='2.4' fill='%2331D2C1'/%3E%3Ccircle cx='26' cy='22' r='2.4' fill='%238C7CF0'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="nav-bar">
+      <a href="#top" class="logo" aria-label="MedSwiff home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#31D2C1"/>
+              <stop offset="100%" stop-color="#8C7CF0"/>
+            </linearGradient>
+          </defs>
+          <path d="M4 22C9 22 9 10 15 10C20 10 20 22 26 22" stroke="url(#logoGrad)" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="4" cy="22" r="2.4" fill="#31D2C1"/>
+          <circle cx="26" cy="22" r="2.4" fill="#8C7CF0"/>
+        </svg>
+        MedSwiff
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#demo" class="btn btn-ghost" style="padding:10px 18px; font-size:14px;">See How It Works</a>
+        <a href="#demo" class="btn btn-primary" style="padding:10px 18px; font-size:14px;">Book a Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#product">Product</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#integrations">Integrations</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#demo" style="color:var(--teal); font-weight:600;">Book a Demo</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="grid-pattern" aria-hidden="true"></div>
+    <div class="bg-fade" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>AI-powered clinic operations</span>
+        <h1>The AI workforce for modern clinics</h1>
+        <p class="lede">MedSwiff handles the calls, bookings, follow-ups, and repetitive workflows that keep your clinic staff busy — so your team can focus on patients.</p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn btn-primary">Book a Demo →</a>
+          <a href="#product" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="conn-svg" viewBox="0 0 500 460" preserveAspectRatio="none">
+          <path d="M100,60 C 180,60 200,140 250,180"/>
+          <path d="M400,90 C 320,90 300,150 250,190"/>
+          <path d="M90,380 C 170,380 190,300 245,240"/>
+          <path d="M420,400 C 330,400 310,320 255,250"/>
+        </svg>
+        <div class="flow-card fc-1"><div class="fc-title"><span class="fc-dot"></span>New patient call</div>Inbound · answering</div>
+        <div class="flow-card fc-2"><div class="fc-title"><span class="fc-dot"></span>Appointment confirmed</div>Dr. Alvarez · 2:30 PM</div>
+        <div class="flow-card fc-3"><div class="fc-title"><span class="fc-dot"></span>Waitlist patient contacted</div>Slot opened at 10:00 AM</div>
+        <div class="flow-card fc-4"><div class="fc-title"><span class="fc-dot"></span>Review request sent</div>Follow-up · SMS</div>
+        <div class="core-node">
+          <div class="badge-ai"><span class="pulse"></span>MedSwiff AI</div>
+          <div class="steps">
+            <div>Incoming call</div>
+            <div><span>AI Receptionist</span></div>
+            <div>Lead qualified</div>
+            <div><span>Appointment booked</span></div>
+            <div>Reminder sent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Your front desk shouldn't have to do everything manually.</h2>
+        <p>Clinics deal with repetitive operational work every day — and it adds up faster than most teams can keep up with.</p>
+      </div>
+      <div class="grid grid-4 reveal">
+        <div class="card problem-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>Too many calls</h3>
+          <p>Patients call to ask questions, check availability, book appointments, reschedule, cancel, and follow up.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Missed opportunities</h3>
+          <p>Calls and inquiries can arrive when staff are busy, after hours, or unavailable.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>No-shows &amp; cancellations</h3>
+          <p>Empty appointment slots create lost opportunities and wasted capacity.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3>Repetitive admin</h3>
+          <p>Staff spend time on reminders, follow-ups, confirmations, reviews, and other repetitive tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCE MEDSWIFF -->
+  <section id="product">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Meet the AI workforce behind your front desk.</h2>
+        <p>MedSwiff combines AI voice agents, AI assistants, and workflow automation to handle repetitive clinic operations — from the first patient interaction to post-appointment follow-up.</p>
+      </div>
+      <div class="workforce-strip reveal">
+        <div class="wf-pill"><span class="dot"></span>AI Receptionist</div>
+        <div class="wf-pill"><span class="dot"></span>AI Scheduler</div>
+        <div class="wf-pill"><span class="dot"></span>Follow-up Agent</div>
+        <div class="wf-pill"><span class="dot"></span>Patient Communication</div>
+        <div class="wf-pill"><span class="dot"></span>Recovery Automation</div>
+        <div class="wf-pill"><span class="dot"></span>Review Assistant</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE FEATURES -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>One workforce. Every workflow.</h2>
+        <p>Six connected capabilities that work together as a single platform, not six separate tools.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div>
+          <span class="feature-num">01 · AI Receptionist</span>
+          <h3>Answers calls the way your front desk would want to.</h3>
+          <p>Handles common questions, collects patient information, and routes conversations to your team when human assistance is needed.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="mini-header"><span>Incoming call</span><span class="mini-status"><span class="pulse-sm"></span>Live · 02:14</span></div>
+          <div class="call-line"><div class="avatar"></div><div><div style="color:var(--text-1); font-weight:500;">New Patient</div><div style="color:var(--text-3); font-size:12px;">AI handling call</div></div></div>
+          <div class="lead-field"><span>Status</span><span style="color:var(--teal);">In progress</span></div>
+          <div class="lead-field"><span>Channel</span><span>Inbound call</span></div>
+        </div>
+      </div>
+
+      <div class="feature-row reverse reveal">
+        <div>
+          <span class="feature-num">02 · Lead Qualification</span>
+          <h3>Turns inquiries into organized, actionable information.</h3>
+          <p>Automatically collects and organizes information from prospective patients and identifies what they need before a human ever steps in.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="lead-field"><span>Name</span><span>J. Marín</span></div>
+          <div class="lead-field"><span>Treatment</span><span>Consultation</span></div>
+          <div class="lead-field"><span>Insurance</span><span>Provided</span></div>
+          <div class="lead-field"><span>Preferred time</span><span>Weekday mornings</span></div>
+          <div class="lead-field"><span>Status</span><span style="color:var(--teal); font-weight:600;">Qualified</span></div>
+        </div>
+      </div>
+
+      <div class="feature-row reveal">
+        <div>
+          <span class="feature-num">03 · Appointment Booking</span>
+          <h3>Books appointments without staff coordinating every step.</h3>
+          <p>Checks availability and helps patients book appointments directly, matching real openings on your calendar.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="mini-header"><span>Available slots · Thursday</span></div>
+          <div class="cal-grid">
+            <div class="cal-slot">9:00</div><div class="cal-slot">9:30</div><div class="cal-slot selected">10:00</div><div class="cal-slot">10:30</div><div class="cal-slot">11:00</div>
+          </div>
+          <div class="lead-field" style="margin-top:16px;"><span>Status</span><span style="color:var(--teal); font-weight:600;">Appointment confirmed</span></div>
+        </div>
+      </div>
+
+      <div class="feature-row reverse reveal">
+        <div>
+          <span class="feature-num">04 · Follow-Ups &amp; Reminders</span>
+          <h3>Keeps patients on track without manual outreach.</h3>
+          <p>Automatically sends appointment confirmations, reminders, follow-ups, and other patient communications on schedule.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="tl-item"><div class="tl-dot"></div><div><div class="tl-label">Appointment booked</div><div class="tl-sub">Just now</div></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div><div class="tl-label">Confirmation sent</div><div class="tl-sub">Instant</div></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div><div class="tl-label">24-hour reminder</div><div class="tl-sub">Scheduled</div></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div><div class="tl-label">Post-visit follow-up</div><div class="tl-sub">Scheduled</div></div></div>
+        </div>
+      </div>
+
+      <div class="feature-row reveal">
+        <div>
+          <span class="feature-num">05 · No-Show &amp; Waitlist Recovery</span>
+          <h3>Fills the gaps a cancellation leaves behind.</h3>
+          <p>When an appointment is cancelled or a slot opens up, MedSwiff can work through the waitlist and reach out to appropriate patients.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="chain">
+            <span class="step">Cancelled appointment</span><span class="arrow">→</span>
+            <span class="step">Waitlist</span><span class="arrow">→</span>
+            <span class="step">Patient contacted</span><span class="arrow">→</span>
+            <span class="step" style="background:var(--teal-dim); color:var(--teal);">Slot filled</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row reverse reveal">
+        <div>
+          <span class="feature-num">06 · Reviews &amp; Reputation</span>
+          <h3>Asks for feedback at the right moment, automatically.</h3>
+          <p>After appropriate patient interactions, MedSwiff can automate review-request workflows so nothing depends on staff remembering to ask.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="chain" style="margin-bottom:16px;">
+            <span class="step">Completed appointment</span><span class="arrow">→</span>
+            <span class="step">Review request</span>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <h2>From patient request to completed workflow.</h2>
+        <p>The same underlying flow handles every channel and every type of request.</p>
+      </div>
+      <div class="steps-row reveal">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h4>Patient reaches out</h4>
+          <p>Call, inquiry, website interaction, or other supported channel.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h4>MedSwiff responds</h4>
+          <p>AI handles the initial interaction and gathers relevant information.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h4>The workflow runs</h4>
+          <p>Qualifies leads, checks availability, schedules appointments, sends reminders, and updates your systems.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <h4>Your team stays in control</h4>
+          <p>Conversations and tasks escalate to staff whenever human involvement is appropriate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section id="solutions">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Built for modern healthcare practices.</h2>
+        <p>The same workforce adapts to how each type of practice actually operates.</p>
+      </div>
+      <div class="tabs reveal" role="tablist" aria-label="Use cases">
+        <button class="tab-btn active" data-tab="medical" role="tab" aria-selected="true">Medical Clinics</button>
+        <button class="tab-btn" data-tab="dental" role="tab" aria-selected="false">Dental Practices</button>
+        <button class="tab-btn" data-tab="spa" role="tab" aria-selected="false">Med Spas</button>
+        <button class="tab-btn" data-tab="chiro" role="tab" aria-selected="false">Chiropractic Clinics</button>
+      </div>
+      <div class="tab-panel active" id="tab-medical">
+        <div>
+          <p>Patient calls, scheduling, follow-ups, FAQs, reminders, and administrative workflows — handled without pulling staff away from patients in the room.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Inbound call handling</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Appointment scheduling</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Reminders &amp; follow-ups</li>
+          </ul>
+        </div>
+        <div class="tab-visual"><div class="glow" style="background:var(--teal); top:10%; left:10%;"></div></div>
+      </div>
+      <div class="tab-panel" id="tab-dental">
+        <div>
+          <p>Appointment booking, cancellations, reminders, treatment inquiries, patient follow-ups, and review requests for busy dental schedules.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Treatment inquiry handling</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cancellation recovery</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Review requests</li>
+          </ul>
+        </div>
+        <div class="tab-visual"><div class="glow" style="background:var(--purple); top:10%; right:10%;"></div></div>
+      </div>
+      <div class="tab-panel" id="tab-spa">
+        <div>
+          <p>Lead qualification, consultation booking, reminders, follow-ups, and reactivation workflows built for consultation-driven practices.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Consultation booking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Lead qualification</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Reactivation outreach</li>
+          </ul>
+        </div>
+        <div class="tab-visual"><div class="glow" style="background:var(--teal); bottom:10%; left:20%;"></div></div>
+      </div>
+      <div class="tab-panel" id="tab-chiro">
+        <div>
+          <p>Appointment scheduling, reminders, patient communication, and follow-up workflows for recurring-visit practices.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Recurring visit scheduling</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Patient communication</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Follow-up workflows</li>
+          </ul>
+        </div>
+        <div class="tab-visual"><div class="glow" style="background:var(--purple); bottom:10%; right:20%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section id="integrations">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Works with the systems your clinic already uses.</h2>
+        <p>MedSwiff is designed to connect with your existing tools rather than forcing your clinic to rebuild its entire workflow.</p>
+      </div>
+      <div class="grid grid-4 reveal">
+        <div class="card integration-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Calendar</h3><p>Sync availability and bookings in real time.</p></div>
+        <div class="card integration-card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg></div><h3>CRM</h3><p>Keep patient and lead records up to date.</p></div>
+        <div class="card integration-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v14H7l-4 4V3z"/></svg></div><h3>Practice Management</h3><p>Connect to how your clinic already runs.</p></div>
+        <div class="card integration-card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M12 18h.01"/></svg></div><h3>EHR</h3><p>Reference and update records where needed.</p></div>
+        <div class="card integration-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Messaging</h3><p>Reach patients over SMS or chat.</p></div>
+        <div class="card integration-card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h3>Payments</h3><p>Connect billing and payment workflows.</p></div>
+        <div class="card integration-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l6-16 4 10 3-6 3 12"/></svg></div><h3>Automation</h3><p>Trigger downstream tools and workflows.</p></div>
+        <div class="card integration-card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><h3>Webhooks</h3><p>Send events anywhere you need them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section>
+    <div class="container">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <h2>One place to see what your AI workforce is doing.</h2>
+        <p>A conceptual view of how activity across your workforce comes together.</p>
+      </div>
+      <div class="dashboard-mock reveal">
+        <div class="dash-top">
+          <div class="dash-title">MedSwiff — Overview</div>
+          <div class="mini-status"><span class="pulse-sm"></span>Today's activity</div>
+        </div>
+        <div class="dash-stats">
+          <div class="dash-stat"><div class="num">18</div><div class="lbl">Calls handled</div></div>
+          <div class="dash-stat"><div class="num">7</div><div class="lbl">Appointments</div></div>
+          <div class="dash-stat"><div class="num">12</div><div class="lbl">Follow-ups</div></div>
+          <div class="dash-stat"><div class="num">24</div><div class="lbl">Tasks automated</div></div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="activity-text"><div class="at-title">AI Receptionist</div><div class="at-sub">Incoming call handled · New patient</div></div>
+          <div class="activity-time">2m ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <div class="activity-text"><div class="at-title">AI Scheduler</div><div class="at-sub">Appointment booked · Dr. Smith</div></div>
+          <div class="activity-time">14m ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="activity-text"><div class="at-title">Follow-up Agent</div><div class="at-sub">Reminder sent</div></div>
+          <div class="activity-time">33m ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l6-16 4 10 3-6 3 12"/></svg></div>
+          <div class="activity-text"><div class="at-title">Recovery Agent</div><div class="at-sub">Waitlist patient contacted</div></div>
+          <div class="activity-time">51m ago</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATION WORKFLOWS -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Don't just automate conversations. Automate what happens next.</h2>
+        <p>MedSwiff is workflow automation with a voice, not a chatbot with a script.</p>
+      </div>
+      <div class="grid" style="gap:16px;">
+        <div class="card reveal">
+          <div class="chain">
+            <span class="step">Incoming call</span><span class="arrow">→</span>
+            <span class="step">Identify patient</span><span class="arrow">→</span>
+            <span class="step">Understand request</span><span class="arrow">→</span>
+            <span class="step">Check availability</span><span class="arrow">→</span>
+            <span class="step">Book appointment</span><span class="arrow">→</span>
+            <span class="step">Update system</span><span class="arrow">→</span>
+            <span class="step" style="background:var(--teal-dim); color:var(--teal);">Send confirmation</span>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="chain">
+            <span class="step">Cancellation</span><span class="arrow">→</span>
+            <span class="step">Detect open slot</span><span class="arrow">→</span>
+            <span class="step">Check waitlist</span><span class="arrow">→</span>
+            <span class="step">Contact eligible patient</span><span class="arrow">→</span>
+            <span class="step">Confirm appointment</span><span class="arrow">→</span>
+            <span class="step" style="background:var(--teal-dim); color:var(--teal);">Update calendar</span>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="chain">
+            <span class="step">Completed appointment</span><span class="arrow">→</span>
+            <span class="step">Trigger follow-up</span><span class="arrow">→</span>
+            <span class="step">Send message</span><span class="arrow">→</span>
+            <span class="step">Request review</span><span class="arrow">→</span>
+            <span class="step" style="background:var(--teal-dim); color:var(--teal);">Record outcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HUMAN HANDOFF -->
+  <section>
+    <div class="container">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <h2>AI when it can. Humans when they should.</h2>
+        <p>MedSwiff is designed to automate repetitive interactions while allowing clinics to route conversations and tasks to human staff when appropriate.</p>
+      </div>
+      <div class="handoff-flow reveal">
+        <div class="handoff-box"><div style="color:var(--teal); font-weight:600; margin-bottom:4px;">AI</div>Handles routine request</div>
+        <div class="handoff-arrow">→</div>
+        <div class="handoff-box">Needs human attention</div>
+        <div class="handoff-arrow">→</div>
+        <div class="handoff-box human"><div style="color:var(--purple); font-weight:600; margin-bottom:4px;">Staff</div>Takes over</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Give your team time back.</h2>
+      </div>
+      <div class="grid grid-4 reveal">
+        <div class="card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3>Fewer interruptions</h3><p>Let AI handle repetitive calls and requests.</p></div>
+        <div class="card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Faster responses</h3><p>Patients receive assistance without waiting for staff availability.</p></div>
+        <div class="card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Fewer missed opportunities</h3><p>Automate responses and follow-up workflows.</p></div>
+        <div class="card"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>More consistent operations</h3><p>Turn repetitive processes into structured workflows.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>For clinics that want to operate smarter.</h2>
+      </div>
+      <div class="grid grid-3 reveal">
+        <div class="card"><h3>Medical Clinics</h3><p>Calls, scheduling, and follow-ups handled around patient care.</p></div>
+        <div class="card"><h3>Dental Practices</h3><p>Bookings, reminders, and review requests on autopilot.</p></div>
+        <div class="card"><h3>Med Spas</h3><p>Consultation booking and lead qualification, always on.</p></div>
+        <div class="card"><h3>Chiropractic Clinics</h3><p>Recurring-visit scheduling without the back-and-forth.</p></div>
+        <div class="card"><h3>Specialty Practices</h3><p>A workflow layer that adapts to how you already operate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO CTA -->
+  <section id="pricing">
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>See what your clinic could automate.</h2>
+        <p>Tell us how your clinic works today. We'll show you where MedSwiff can fit into the workflow.</p>
+        <div class="cta-btns">
+          <a href="#demo" class="btn btn-primary">Book a Demo →</a>
+          <a href="#product" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / DEMO FORM -->
+  <section id="demo">
+    <div class="container">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto;">
+        <h2>Let's map your clinic's workflows.</h2>
+        <p>A few details help us tailor the demo to how your practice actually runs.</p>
+      </div>
+      <div class="form-wrap reveal">
+        <form id="demoForm" novalidate>
+          <div class="form-row">
+            <div class="field" data-field="name">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Jordan Lee" required>
+              <span class="err-msg">Please enter your name.</span>
+            </div>
+            <div class="field" data-field="email">
+              <label for="f-email">Work email</label>
+              <input type="email" id="f-email" name="email" placeholder="jordan@clinic.com" required>
+              <span class="err-msg">Please enter a valid work email.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field" data-field="clinic">
+              <label for="f-clinic">Clinic / practice name</label>
+              <input type="text" id="f-clinic" name="clinic" placeholder="Riverside Family Clinic" required>
+              <span class="err-msg">Please enter your clinic name.</span>
+            </div>
+            <div class="field" data-field="type">
+              <label for="f-type">Practice type</label>
+              <select id="f-type" name="type" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Medical Clinic</option>
+                <option>Dental</option>
+                <option>Med Spa</option>
+                <option>Chiropractic</option>
+                <option>Other</option>
+              </select>
+              <span class="err-msg">Please select a practice type.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field" data-field="system" style="grid-column:1 / -1;">
+              <label for="f-system">Current scheduling / practice management system</label>
+              <input type="text" id="f-system" name="system" placeholder="e.g. Dentrix, Curve, or none yet">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field" data-field="bottleneck" style="grid-column:1 / -1;">
+              <label for="f-bottleneck">Biggest operational bottleneck</label>
+              <select id="f-bottleneck" name="bottleneck" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Too many calls</option>
+                <option>Appointment scheduling</option>
+                <option>No-shows</option>
+                <option>Follow-ups</option>
+                <option>Lead qualification</option>
+                <option>Patient communication</option>
+                <option>Administrative work</option>
+                <option>Other</option>
+              </select>
+              <span class="err-msg">Please select an option.</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">Request a Demo</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3 style="margin-bottom:8px;">Request received</h3>
+          <p style="color:var(--text-2);">We'll follow up at the email you provided to schedule your demo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 22C9 22 9 10 15 10C20 10 20 22 26 22" stroke="url(#logoGrad)" stroke-width="2.6" stroke-linecap="round"/>
+            <circle cx="4" cy="22" r="2.4" fill="#31D2C1"/>
+            <circle cx="26" cy="22" r="2.4" fill="#8C7CF0"/>
+          </svg>
+          MedSwiff
+        </div>
+        <p>The AI workforce for modern clinics.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Product</h5>
+          <a href="#product">Product</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#solutions">Solutions</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#integrations">Integrations</a>
+          <a href="#demo">Book a Demo</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> MedSwiff. All rights reserved.</span>
+      <span>Built for the workflows modern clinics deal with every day.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
