@@ -92,6 +92,14 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(payload),
     });
 
+    if (res.status === 409) {
+      const data = await res.json().catch(() => ({}));
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      alert(data.message || "We already have a recent request from this email.");
+      return;
+    }
+
     if (!res.ok) throw new Error('Request failed');
 
     form.style.display = 'none';
