@@ -1,11 +1,15 @@
 // functions/api/leads.js
-// Returns stored leads. Protect this path with Cloudflare Access (see deploy steps) —
-// this function does not do its own authentication.
+// Requires the same Basic Auth as /admin (see functions/_shared/auth.js).
 //
-// GET /api/leads          -> JSON array of leads
+// GET /api/leads            -> JSON array of leads
 // GET /api/leads?format=csv -> CSV file download
 
+import { checkAuth } from '../_shared/auth.js';
+
 export async function onRequestGet(context) {
+  const authFail = checkAuth(context.request, context.env);
+  if (authFail) return authFail;
+
   const db = context.env.DB;
   const url = new URL(context.request.url);
   const format = url.searchParams.get('format');
