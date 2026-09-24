@@ -110,3 +110,47 @@ form.addEventListener('submit', async (e) => {
     alert("Something went wrong sending your request — please try again in a moment.");
   }
 });
+
+// Missed-call cost estimator
+const calcCalls = document.getElementById('calcCalls');
+const calcValue = document.getElementById('calcValue');
+if (calcCalls && calcValue) {
+  const calcCallsVal = document.getElementById('calcCallsVal');
+  const calcValueVal = document.getElementById('calcValueVal');
+  const calcResult = document.getElementById('calcResult');
+  const bdCalls = document.getElementById('bdCalls');
+  const bdYear = document.getElementById('bdYear');
+  const bdBookings = document.getElementById('bdBookings');
+  const bdValue = document.getElementById('bdValue');
+  const BOOKING_RATE = 0.25; // assumes ~1 in 4 missed callers would have booked
+
+  function updateCalc() {
+    const calls = parseInt(calcCalls.value, 10);
+    const value = parseInt(calcValue.value, 10);
+    const perYear = calls * 52;
+    const bookingsLost = Math.round(perYear * BOOKING_RATE);
+    const annualLoss = bookingsLost * value;
+
+    calcCallsVal.textContent = calls;
+    calcValueVal.textContent = '$' + value;
+    bdCalls.textContent = calls;
+    bdYear.textContent = perYear.toLocaleString();
+    bdBookings.textContent = bookingsLost.toLocaleString();
+    bdValue.textContent = '$' + value;
+    calcResult.textContent = '$' + annualLoss.toLocaleString();
+  }
+
+  calcCalls.addEventListener('input', updateCalc);
+  calcValue.addEventListener('input', updateCalc);
+  updateCalc();
+
+  const calcForm = document.getElementById('calcForm');
+  const calcSuccess = document.getElementById('calcSuccess');
+  calcForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Placeholder for now — not yet wired to a backend endpoint.
+    // Swap this for a fetch('/api/estimate', ...) call once that's built.
+    calcForm.style.display = 'none';
+    calcSuccess.classList.add('show');
+  });
+}
