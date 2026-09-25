@@ -492,7 +492,55 @@
       </div>
     </div>
   </section>
+  <!-- 7. FOUNDER -->
+  <section id="founder">
+    <div class="container">
+      <div class="section-head center reveal" style="margin-left:auto; margin-right:auto; max-width:600px;">
+        <h2>Why I built MedSwiff</h2>
+        <p style="font-size:16px;">I'm Hamza Abid — a final-year medical student who also builds AI automation systems for healthcare practices. MedSwiff sits at the intersection of those two things: enough time around how clinics actually run to know where the repetitive work piles up, and enough time building automation to know what can be safely handed to it.</p>
+        <p style="font-size:16px; margin-top:16px; color:var(--text-1); font-weight:500;">AI should take repetitive work off a team's plate — not get in the way of patient care.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- SOFT CONVERSION: MISSED-CALL COST ESTIMATOR -->
+  <section id="estimate">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="margin-bottom:14px;"><span class="dot"></span>Not ready to book a call?</span>
+      <h2>What are missed calls costing you?</h2>
+      <p>Move the sliders to see a rough estimate for your clinic — no call required.</p>
+    </div>
+    <div class="calc-wrap reveal">
+      <div class="calc-sliders">
+        <div class="calc-field">
+          <label>Missed calls per week <span id="calcCallsVal">15</span></label>
+          <input type="range" id="calcCalls" min="0" max="100" value="15" step="1">
+        </div>
+        <div class="calc-field">
+          <label>Average appointment value <span id="calcValueVal">$150</span></label>
+          <input type="range" id="calcValue" min="20" max="500" value="150" step="10">
+        </div>
+        <p class="calc-assumption">Assumes roughly 1 in 4 missed callers would have booked if someone had answered. We'll refine that assumption once we look at your actual numbers.</p>
+      </div>
+      <div class="calc-result-card">
+        <div class="calc-result-label">Estimated annual loss</div>
+        <div class="calc-result-number" id="calcResult">$29,250</div>
+        <div class="calc-breakdown-row"><span>Missed calls per week</span><span id="bdCalls">15</span></div>
+        <div class="calc-breakdown-row"><span>Over a year</span><span id="bdYear">780</span></div>
+        <div class="calc-breakdown-row"><span>Estimated bookings lost</span><span id="bdBookings">195</span></div>
+        <div class="calc-breakdown-row"><span>Average appointment value</span><span id="bdValue">$150</span></div>
+        <p class="calc-disclaimer">This is a rough, illustrative estimate based on the numbers above and a general conversion assumption. It doesn't account for slow follow-ups, no-shows, or lost repeat visits — the real number is usually higher.</p>
+        <form id="calcForm" class="calc-email-form">
+          <input type="email" id="calcEmail" placeholder="you@clinic.com" required>
+          <button type="submit" class="btn btn-primary">Email me this estimate</button>
+        </form>
+        <div class="calc-email-success" id="calcSuccess">Sent — check your inbox shortly.</div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
   <!-- DEMO CTA -->
   <section id="pricing">
     <div class="container">
