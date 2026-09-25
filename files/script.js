@@ -1,156 +1,112 @@
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-// Mobile menu
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  mobileMenu.classList.remove('open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-}));
+const year = $('#year');
+if (year) year.textContent = new Date().getFullYear();
 
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-} else {
-  revealEls.forEach(el => el.classList.add('in'));
+const menuToggle = $('#menuToggle');
+const mobileMenu = $('#mobileMenu');
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  $$('a', mobileMenu).forEach(link => link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+  }));
 }
 
-// Use case tabs
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  });
-});
-
-// Form validation + submission
-const form = document.getElementById('demoForm');
-const formSuccess = document.getElementById('formSuccess');
-const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const submitBtn = form.querySelector('button[type="submit"]');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  let valid = true;
-
-  const checks = [
-    { field: 'name', test: () => form.name.value.trim().length > 0 },
-    { field: 'email', test: () => emailRe.test(form.email.value.trim()) },
-    { field: 'clinic', test: () => form.clinic.value.trim().length > 0 },
-    { field: 'type', test: () => form.type.value !== '' },
-    { field: 'bottleneck', test: () => form.bottleneck.value !== '' },
-  ];
-
-  checks.forEach(({ field, test }) => {
-    const wrap = form.querySelector('[data-field="' + field + '"]');
-    if (!test()) {
-      wrap.classList.add('error');
-      valid = false;
-    } else {
-      wrap.classList.remove('error');
+const revealEls = $$('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
     }
-  });
+  }), { threshold: 0.12 });
+  revealEls.forEach(element => observer.observe(element));
+} else revealEls.forEach(element => element.classList.add('in'));
 
-  if (!valid) return;
-
-  const payload = {
-    name: form.name.value.trim(),
-    email: form.email.value.trim(),
-    clinic: form.clinic.value.trim(),
-    type: form.type.value,
-    system: form.system.value.trim(),
-    bottleneck: form.bottleneck.value,
-  };
-
-  const originalLabel = submitBtn.textContent;
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Submitting…';
-
-  try {
-    const res = await fetch('/api/demo', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.status === 409) {
-      const data = await res.json().catch(() => ({}));
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
-      alert(data.message || "We already have a recent request from this email.");
-      return;
-    }
-
-    if (!res.ok) throw new Error('Request failed');
-
-    form.style.display = 'none';
-    formSuccess.classList.add('show');
-  } catch (err) {
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalLabel;
-    alert("Something went wrong sending your request — please try again in a moment.");
-  }
-});
-
-// Missed-call cost estimator
-const calcCalls = document.getElementById('calcCalls');
-const calcValue = document.getElementById('calcValue');
+// Revenue opportunity calculator. The assumption is deliberately visible in the UI.
+const calcCalls = $('#calcCalls');
+const calcValue = $('#calcValue');
 if (calcCalls && calcValue) {
-  const calcCallsVal = document.getElementById('calcCallsVal');
-  const calcValueVal = document.getElementById('calcValueVal');
-  const calcResult = document.getElementById('calcResult');
-  const bdCalls = document.getElementById('bdCalls');
-  const bdYear = document.getElementById('bdYear');
-  const bdBookings = document.getElementById('bdBookings');
-  const bdValue = document.getElementById('bdValue');
-  const BOOKING_RATE = 0.25; // assumes ~1 in 4 missed callers would have booked
+  const callsLabel = $('#calcCallsVal');
+  const valueLabel = $('#calcValueVal');
+  const result = $('#calcResult');
+  const breakdown = { calls: $('#bdCalls'), year: $('#bdYear'), bookings: $('#bdBookings'), value: $('#bdValue') };
+  const BOOKING_RATE = 0.25;
+  const money = amount => '$' + amount.toLocaleString('en-US');
 
-  function updateCalc() {
-    const calls = parseInt(calcCalls.value, 10);
-    const value = parseInt(calcValue.value, 10);
-    const perYear = calls * 52;
-    const bookingsLost = Math.round(perYear * BOOKING_RATE);
-    const annualLoss = bookingsLost * value;
-
-    calcCallsVal.textContent = calls;
-    calcValueVal.textContent = '$' + value;
-    bdCalls.textContent = calls;
-    bdYear.textContent = perYear.toLocaleString();
-    bdBookings.textContent = bookingsLost.toLocaleString();
-    bdValue.textContent = '$' + value;
-    calcResult.textContent = '$' + annualLoss.toLocaleString();
+  function updateCalculator() {
+    const calls = Number(calcCalls.value);
+    const value = Number(calcValue.value);
+    const annualCalls = calls * 52;
+    const bookings = Math.round(annualCalls * BOOKING_RATE);
+    callsLabel.textContent = calls;
+    valueLabel.textContent = money(value);
+    breakdown.calls.textContent = calls;
+    breakdown.year.textContent = annualCalls.toLocaleString('en-US');
+    breakdown.bookings.textContent = bookings.toLocaleString('en-US');
+    breakdown.value.textContent = money(value);
+    result.textContent = money(bookings * value);
   }
+  calcCalls.addEventListener('input', updateCalculator);
+  calcValue.addEventListener('input', updateCalculator);
+  updateCalculator();
+}
 
-  calcCalls.addEventListener('input', updateCalc);
-  calcValue.addEventListener('input', updateCalc);
-  updateCalc();
-
-  const calcForm = document.getElementById('calcForm');
-  const calcSuccess = document.getElementById('calcSuccess');
-  calcForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    // Placeholder for now — not yet wired to a backend endpoint.
-    // Swap this for a fetch('/api/estimate', ...) call once that's built.
-    calcForm.style.display = 'none';
+const calcForm = $('#calcForm');
+const calcSuccess = $('#calcSuccess');
+if (calcForm && calcSuccess) {
+  calcForm.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!calcForm.reportValidity()) return;
+    // This is intentionally a clear placeholder until an email endpoint is available.
+    calcForm.hidden = true;
     calcSuccess.classList.add('show');
+  });
+}
+
+const form = $('#demoForm');
+const formSuccess = $('#formSuccess');
+if (form && formSuccess) {
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const submit = $('button[type="submit"]', form);
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const required = [
+      ['name', () => form.name.value.trim().length > 0],
+      ['email', () => emailRe.test(form.email.value.trim())],
+      ['clinic', () => form.clinic.value.trim().length > 0],
+      ['type', () => form.type.value !== ''],
+      ['bottleneck', () => form.bottleneck.value !== '']
+    ];
+    let valid = true;
+    required.forEach(([field, check]) => {
+      const wrapper = $(`[data-field="${field}"]`, form);
+      const passed = check();
+      wrapper?.classList.toggle('error', !passed);
+      valid = passed && valid;
+    });
+    if (!valid) return;
+    const originalText = submit.textContent;
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
+    const payload = Object.fromEntries(new FormData(form).entries());
+    try {
+      const response = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (response.status === 409) throw new Error('We already have a recent request from this email.');
+      if (!response.ok) throw new Error('Request failed');
+      form.hidden = true;
+      formSuccess.classList.add('show');
+    } catch (error) {
+      submit.disabled = false;
+      submit.textContent = originalText;
+      alert(error.message === 'We already have a recent request from this email.' ? error.message : 'Something went wrong sending your request — please try again in a moment.');
+    }
   });
 }
