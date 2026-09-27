@@ -15,43 +15,390 @@
 </head>
 <body>
 <header>
-  <div class="nav-inner"><div class="nav-bar">
-    <a href="#top" class="logo" aria-label="MedSwiff home"><span class="logo-mark" aria-hidden="true">⌁</span> MedSwiff</a>
-    <nav class="nav-links" aria-label="Primary"><a href="#estimate">Your loss</a><a href="#solution">What it automates</a><a href="#who-its-for">Solutions</a><a href="#founder">About</a></nav>
-    <div class="nav-cta"><a href="#demo" class="btn btn-primary nav-button">Get my free audit</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
-  </div></div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="#estimate">Calculate your loss</a><a href="#solution">What it automates</a><a href="#who-its-for">Solutions</a><a href="#founder">About</a><a href="#demo">Get my free audit</a></nav>
+  <div class="nav-inner">
+    <div class="nav-bar">
+      <a href="#top" class="logo" aria-label="MedSwiff home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#35d6c4"/>
+              <stop offset="100%" stop-color="#9b8df5"/>
+            </linearGradient>
+          </defs>
+          <path d="M4 22C9 22 9 10 15 10C20 10 20 22 26 22" stroke="url(#logoGrad)" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="4" cy="22" r="2.4" fill="#35d6c4"/>
+          <circle cx="26" cy="22" r="2.4" fill="#9b8df5"/>
+        </svg>
+        MedSwiff
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#estimate">Your loss</a>
+        <a href="#solution">What it automates</a>
+        <a href="#who-its-for">Solutions</a>
+        <a href="#founder">About</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#demo" class="btn btn-primary nav-button">Get my free audit</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="#estimate">Calculate your loss</a>
+    <a href="#solution">What it automates</a>
+    <a href="#who-its-for">Solutions</a>
+    <a href="#founder">About</a>
+    <a href="#demo">Get my free audit</a>
+  </nav>
 </header>
+
 <main id="top">
   <section class="hero">
-    <div class="bg-fade" aria-hidden="true"></div><div class="grid-pattern" aria-hidden="true"></div>
+    <div class="bg-fade" aria-hidden="true"></div>
+    <div class="grid-pattern" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-copy">
         <span class="eyebrow"><span class="dot"></span>Built for busy clinic front desks</span>
         <h1>How much revenue is your clinic losing to missed calls?</h1>
         <p class="lede">When your team is with patients, new callers wait, follow-ups slip, and appointment slots go empty. MedSwiff helps recover that work — without adding another person to your payroll.</p>
-        <div class="hero-ctas"><a href="#estimate" class="btn btn-primary">Calculate your lost revenue <span aria-hidden="true">↓</span></a><a href="#how-it-works" class="btn btn-ghost">See the workflow</a></div>
+        <div class="hero-ctas">
+          <a href="#estimate" class="btn btn-primary">Calculate your lost revenue <span aria-hidden="true">↓</span></a>
+          <a href="#how-it-works" class="btn btn-ghost">See the workflow</a>
+        </div>
         <p class="trust-line">No commitment · No sales pressure · Built around your existing workflow</p>
       </div>
-      <div class="hero-loss-card" aria-label="Example missed call revenue calculation"><div class="loss-card-top"><span>Example clinic snapshot</span><span class="live-dot">● Live estimate</span></div><div class="loss-number">$29,250</div><p>potential annual revenue left on the table</p><div class="loss-metrics"><div><strong>15</strong><span>missed calls / week</span></div><div><strong>195</strong><span>bookings / year</span></div></div><a href="#estimate" class="text-link">Run your own numbers →</a></div>
+
+      <div class="hero-loss-card" aria-label="Example missed call revenue calculation">
+        <div class="loss-card-top">
+          <span>Example clinic snapshot</span>
+          <span class="live-dot">● Live estimate</span>
+        </div>
+        <div class="loss-number">$29,250</div>
+        <p>potential annual revenue left on the table</p>
+        <div class="loss-metrics">
+          <div>
+            <strong>15</strong>
+            <span>missed calls / week</span>
+          </div>
+          <div>
+            <strong>195</strong>
+            <span>bookings / year</span>
+          </div>
+        </div>
+        <a href="#estimate" class="text-link">Run your own numbers →</a>
+      </div>
     </div>
   </section>
 
-  <section id="problem"><div class="container"><div class="section-head reveal"><span class="eyebrow"><span class="dot"></span>The hidden cost of “we’ll call them back”</span><h2>Your team isn’t failing. The workflow is leaking revenue.</h2><p>Every small delay compounds into a missed appointment, an empty chair, or a patient who chooses the clinic that answered first.</p></div><div class="grid grid-4 reveal"><article class="card problem-card"><div class="problem-icon">☎</div><h3>Missed calls</h3><p>A new patient calls while staff are helping someone in front of them — and books elsewhere.</p><strong>Lost opportunity</strong></article><article class="card problem-card"><div class="problem-icon">◷</div><h3>Slow follow-ups</h3><p>Leads and referral inquiries sit untouched until the team finally has a spare minute.</p><strong>Lower conversion</strong></article><article class="card problem-card"><div class="problem-icon">□</div><h3>Empty slots</h3><p>A cancellation opens your calendar, but nobody has time to work the waitlist.</p><strong>Wasted capacity</strong></article><article class="card problem-card"><div class="problem-icon">✓</div><h3>Repetitive admin</h3><p>Reminders, confirmations, and review requests consume the hours your team needs for patients.</p><strong>Higher workload</strong></article></div></div></section>
+  <section id="problem">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span>The hidden cost of “we’ll call them back”</span>
+        <h2>Your team isn’t failing. The workflow is leaking revenue.</h2>
+        <p>Every small delay compounds into a missed appointment, an empty chair, or a patient who chooses the clinic that answered first.</p>
+      </div>
+      <div class="grid grid-4 reveal">
+        <article class="card problem-card">
+          <div class="problem-icon">☎</div>
+          <h3>Missed calls</h3>
+          <p>A new patient calls while staff are helping someone in front of them — and books elsewhere.</p>
+          <strong>Lost opportunity</strong>
+        </article>
+        <article class="card problem-card">
+          <div class="problem-icon">◷</div>
+          <h3>Slow follow-ups</h3>
+          <p>Leads and referral inquiries sit untouched until the team finally has a spare minute.</p>
+          <strong>Lower conversion</strong>
+        </article>
+        <article class="card problem-card">
+          <div class="problem-icon">□</div>
+          <h3>Empty slots</h3>
+          <p>A cancellation opens your calendar, but nobody has time to work the waitlist.</p>
+          <strong>Wasted capacity</strong>
+        </article>
+        <article class="card problem-card">
+          <div class="problem-icon">✓</div>
+          <h3>Repetitive admin</h3>
+          <p>Reminders, confirmations, and review requests consume the hours your team needs for patients.</p>
+          <strong>Higher workload</strong>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="estimate" class="estimate-section"><div class="container"><div class="section-head center reveal"><span class="eyebrow"><span class="dot"></span>Use your numbers</span><h2>Put a number on the problem.</h2><p>Adjust the sliders for a rough estimate of the appointment revenue missed each year. It takes 10 seconds.</p></div><div class="calc-wrap reveal"><div class="calc-sliders"><div class="calc-field"><label for="calcCalls">Missed calls per week <span id="calcCallsVal">15</span></label><input type="range" id="calcCalls" min="0" max="100" value="15" step="1"></div><div class="calc-field"><label for="calcValue">Average appointment value <span id="calcValueVal">$150</span></label><input type="range" id="calcValue" min="20" max="500" value="150" step="10"></div><p class="calc-assumption">Illustrative estimate: assumes 1 in 4 missed callers would have booked. We’ll replace this assumption with your real numbers during an audit.</p><a href="#demo" class="btn btn-primary">Help me recover this revenue →</a></div><div class="calc-result-card"><div class="calc-result-label">Estimated annual opportunity</div><div class="calc-result-number" id="calcResult">$29,250</div><div class="calc-breakdown-row"><span>Missed calls per week</span><span id="bdCalls">15</span></div><div class="calc-breakdown-row"><span>Missed calls per year</span><span id="bdYear">780</span></div><div class="calc-breakdown-row"><span>Estimated bookings missed</span><span id="bdBookings">195</span></div><div class="calc-breakdown-row"><span>Average appointment value</span><span id="bdValue">$150</span></div><p class="calc-disclaimer">This is a directional estimate, not a promise of results. It excludes follow-up delays, no-shows, repeat visits, and other revenue leakage.</p><form id="calcForm" class="calc-email-form"><label class="sr-only" for="calcEmail">Email address</label><input type="email" id="calcEmail" placeholder="you@clinic.com" required><button type="submit" class="btn btn-ghost">Email this estimate</button></form><div class="calc-email-success" id="calcSuccess" role="status">Estimate ready — check your inbox shortly.</div></div></div></div></section>
+  <section id="estimate" class="estimate-section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span class="dot"></span>Use your numbers</span>
+        <h2>Put a number on the problem.</h2>
+        <p>Adjust the sliders for a rough estimate of the appointment revenue missed each year. It takes 10 seconds.</p>
+      </div>
+      <div class="calc-wrap reveal">
+        <div class="calc-sliders">
+          <div class="calc-field">
+            <label for="calcCalls">Missed calls per week <span id="calcCallsVal">15</span></label>
+            <input type="range" id="calcCalls" min="0" max="100" value="15" step="1">
+          </div>
+          <div class="calc-field">
+            <label for="calcValue">Average appointment value <span id="calcValueVal">$150</span></label>
+            <input type="range" id="calcValue" min="20" max="500" value="150" step="10">
+          </div>
+          <p class="calc-assumption">Illustrative estimate: assumes 1 in 4 missed callers would have booked. We’ll replace this assumption with your real numbers during an audit.</p>
+          <a href="#demo" class="btn btn-primary">Help me recover this revenue →</a>
+        </div>
 
-  <section id="solution"><div class="container"><div class="section-head reveal"><span class="eyebrow"><span class="dot"></span>One workflow layer</span><h2>Recover the work your front desk doesn’t have time to do.</h2><p>MedSwiff handles the repetitive moments around a patient interaction, so your team can stay focused on care.</p></div><div class="grid grid-4 reveal"><article class="card solution-card"><span class="card-number">01</span><h3>Answer every opportunity</h3><p>Respond to inbound calls and questions when your staff are busy or unavailable.</p></article><article class="card solution-card"><span class="card-number">02</span><h3>Turn intent into bookings</h3><p>Qualify requests, check availability, and help patients book the right appointment.</p></article><article class="card solution-card"><span class="card-number">03</span><h3>Follow up before interest fades</h3><p>Keep leads and referral inquiries moving without asking staff to remember another task.</p></article><article class="card solution-card"><span class="card-number">04</span><h3>Fill the gaps</h3><p>Support reminders, cancellations, waitlists, and review workflows after the call ends.</p></article></div></div></section>
+        <div class="calc-result-card">
+          <div class="calc-result-label">Estimated annual opportunity</div>
+          <div class="calc-result-number" id="calcResult">$29,250</div>
+          <div class="calc-breakdown-row"><span>Missed calls per week</span><span id="bdCalls">15</span></div>
+          <div class="calc-breakdown-row"><span>Missed calls per year</span><span id="bdYear">780</span></div>
+          <div class="calc-breakdown-row"><span>Estimated bookings missed</span><span id="bdBookings">195</span></div>
+          <div class="calc-breakdown-row"><span>Average appointment value</span><span id="bdValue">$150</span></div>
+          <p class="calc-disclaimer">This is a directional estimate, not a promise of results. It excludes follow-up delays, no-shows, repeat visits, and other revenue leakage.</p>
+          <form id="calcForm" class="calc-email-form">
+            <label class="sr-only" for="calcEmail">Email address</label>
+            <input type="email" id="calcEmail" placeholder="you@clinic.com" required>
+            <button type="submit" class="btn btn-ghost">Email this estimate</button>
+          </form>
+          <div class="calc-email-success" id="calcSuccess" role="status">Estimate ready — check your inbox shortly.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="how-it-works"><div class="container"><div class="section-head center reveal"><span class="eyebrow"><span class="dot"></span>A better patient journey</span><h2>From missed opportunity to completed appointment.</h2><p>Here’s what can happen while your team is caring for the patient in front of them.</p></div><div class="steps-row reveal"><article class="step-item"><div class="step-num">1</div><h4>A patient reaches out</h4><p>Even after hours or during a busy shift, the request gets a response.</p></article><article class="step-item"><div class="step-num">2</div><h4>The request is understood</h4><p>The workflow captures intent and routes the conversation appropriately.</p></article><article class="step-item"><div class="step-num">3</div><h4>The next step happens</h4><p>Availability is checked and the patient can move toward a booking.</p></article><article class="step-item"><div class="step-num">4</div><h4>Your system stays updated</h4><p>Confirmation and follow-up tasks happen without another manual handoff.</p></article></div></div></section>
+  <section id="solution">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span>One workflow layer</span>
+        <h2>Recover the work your front desk doesn’t have time to do.</h2>
+        <p>MedSwiff handles the repetitive moments around a patient interaction, so your team can stay focused on care.</p>
+      </div>
+      <div class="grid grid-4 reveal">
+        <article class="card solution-card">
+          <span class="card-number">01</span>
+          <h3>Answer every opportunity</h3>
+          <p>Respond to inbound calls and questions when your staff are busy or unavailable.</p>
+        </article>
+        <article class="card solution-card">
+          <span class="card-number">02</span>
+          <h3>Turn intent into bookings</h3>
+          <p>Qualify requests, check availability, and help patients book the right appointment.</p>
+        </article>
+        <article class="card solution-card">
+          <span class="card-number">03</span>
+          <h3>Follow up before interest fades</h3>
+          <p>Keep leads and referral inquiries moving without asking staff to remember another task.</p>
+        </article>
+        <article class="card solution-card">
+          <span class="card-number">04</span>
+          <h3>Fill the gaps</h3>
+          <p>Support reminders, cancellations, waitlists, and review workflows after the call ends.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="who-its-for"><div class="container"><div class="section-head reveal"><span class="eyebrow"><span class="dot"></span>Designed around your practice</span><h2>The same revenue leak looks different in every clinic.</h2><p>Start with the workflow costing you the most. Then build from there.</p></div><div class="grid grid-3 reveal"><article class="card audience-card"><h3>Medical clinics</h3><p>Protect new-patient calls and keep scheduling moving around patient care.</p></article><article class="card audience-card"><h3>Dental practices</h3><p>Respond faster to high-value consultations, reminders, and cancellations.</p></article><article class="card audience-card"><h3>Med spas</h3><p>Turn inquiries into consultations while your team is delivering treatments.</p></article><article class="card audience-card"><h3>Chiropractic clinics</h3><p>Make recurring visits and schedule changes easier to manage.</p></article><article class="card audience-card"><h3>Specialty practices</h3><p>Adapt the workflow to the way your referrals, calls, and bookings already work.</p></article></div></div></section>
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span class="dot"></span>A better patient journey</span>
+        <h2>From missed opportunity to completed appointment.</h2>
+        <p>Here’s what can happen while your team is caring for the patient in front of them.</p>
+      </div>
+      <div class="steps-row reveal">
+        <article class="step-item">
+          <div class="step-num">1</div>
+          <h4>A patient reaches out</h4>
+          <p>Even after hours or during a busy shift, the request gets a response.</p>
+        </article>
+        <article class="step-item">
+          <div class="step-num">2</div>
+          <h4>The request is understood</h4>
+          <p>The workflow captures intent and routes the conversation appropriately.</p>
+        </article>
+        <article class="step-item">
+          <div class="step-num">3</div>
+          <h4>The next step happens</h4>
+          <p>Availability is checked and the patient can move toward a booking.</p>
+        </article>
+        <article class="step-item">
+          <div class="step-num">4</div>
+          <h4>Your system stays updated</h4>
+          <p>Confirmation and follow-up tasks happen without another manual handoff.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="founder"><div class="container founder-panel reveal"><div><span class="eyebrow"><span class="dot"></span>Why MedSwiff</span><h2>Automation should give care teams time back — not create another system to manage.</h2></div><div><p>I’m Hamza Abid, a final-year medical student who builds AI automation systems for healthcare practices. I built MedSwiff around a simple observation: front-desk teams are often asked to do too much at the exact moment patients need them most.</p><p class="founder-emphasis">The goal isn’t to replace the human touch. It’s to remove the repetitive work that gets in its way.</p></div></div></section>
+  <section id="who-its-for">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span>Designed around your practice</span>
+        <h2>The same revenue leak looks different in every clinic.</h2>
+        <p>Start with the workflow costing you the most. Then build from there.</p>
+      </div>
+      <div class="grid grid-3 reveal">
+        <article class="card audience-card">
+          <h3>Medical clinics</h3>
+          <p>Protect new-patient calls and keep scheduling moving around patient care.</p>
+        </article>
+        <article class="card audience-card">
+          <h3>Dental practices</h3>
+          <p>Respond faster to high-value consultations, reminders, and cancellations.</p>
+        </article>
+        <article class="card audience-card">
+          <h3>Med spas</h3>
+          <p>Turn inquiries into consultations while your team is delivering treatments.</p>
+        </article>
+        <article class="card audience-card">
+          <h3>Chiropractic clinics</h3>
+          <p>Make recurring visits and schedule changes easier to manage.</p>
+        </article>
+        <article class="card audience-card">
+          <h3>Specialty practices</h3>
+          <p>Adapt the workflow to the way your referrals, calls, and bookings already work.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="demo"><div class="container"><div class="section-head center reveal"><span class="eyebrow"><span class="dot"></span>Free workflow audit</span><h2>Find out what your clinic could recover.</h2><p>Tell us where revenue or time is leaking. We’ll show you the highest-impact workflow to automate first.</p></div><div class="form-wrap reveal"><form id="demoForm" novalidate><div class="form-row"><div class="field" data-field="name"><label for="f-name">Name</label><input type="text" id="f-name" name="name" placeholder="Jordan Lee" required><span class="err-msg">Please enter your name.</span></div><div class="field" data-field="email"><label for="f-email">Work email</label><input type="email" id="f-email" name="email" placeholder="jordan@clinic.com" required><span class="err-msg">Please enter a valid work email.</span></div></div><div class="form-row"><div class="field" data-field="clinic"><label for="f-clinic">Clinic / practice name</label><input type="text" id="f-clinic" name="clinic" placeholder="Riverside Family Clinic" required><span class="err-msg">Please enter your clinic name.</span></div><div class="field" data-field="type"><label for="f-type">Practice type</label><select id="f-type" name="type" required><option value="" disabled selected>Select one</option><option>Medical Clinic</option><option>Dental</option><option>Med Spa</option><option>Chiropractic</option><option>Other</option></select><span class="err-msg">Please select a practice type.</span></div></div><div class="field full-field"><label for="f-system">Current scheduling / practice management system <span>(optional)</span></label><input type="text" id="f-system" name="system" placeholder="e.g. Dentrix, Curve, or none yet"></div><div class="field full-field" data-field="bottleneck"><label for="f-bottleneck">Where is the biggest leak?</label><select id="f-bottleneck" name="bottleneck" required><option value="" disabled selected>Select one</option><option>Missed calls</option><option>Appointment scheduling</option><option>No-shows</option><option>Follow-ups</option><option>Lead qualification</option><option>Patient communication</option><option>Administrative work</option><option>Other</option></select><span class="err-msg">Please select an option.</span></div><button type="submit" class="btn btn-primary btn-block">Show me what to automate →</button><p class="form-note">We’ll use your answers to make the conversation relevant — not to send spam.</p></form><div class="form-success" id="formSuccess" role="status"><div class="check">✓</div><h3>Request received</h3><p>We’ll follow up at the email you provided to schedule your audit.</p></div></div></div></section>
+  <section id="founder">
+    <div class="container founder-panel reveal">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Why MedSwiff</span>
+        <h2>Automation should give care teams time back — not create another system to manage.</h2>
+      </div>
+      <div>
+        <p>I’m Hamza Abid, a final-year medical student who builds AI automation systems for healthcare practices. I built MedSwiff around a simple observation: front-desk teams are often asked to do too much at the exact moment patients need them most.</p>
+        <p class="founder-emphasis">The goal isn’t to replace the human touch. It’s to remove the repetitive work that gets in its way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span class="dot"></span>Free workflow audit</span>
+        <h2>Find out what your clinic could recover.</h2>
+        <p>Tell us where revenue or time is leaking. We’ll show you the highest-impact workflow to automate first.</p>
+      </div>
+
+      <div class="form-wrap reveal">
+        <form id="demoForm" novalidate>
+          <div class="form-row">
+            <div class="field" data-field="name">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Jordan Lee" required>
+              <span class="err-msg">Please enter your name.</span>
+            </div>
+            <div class="field" data-field="email">
+              <label for="f-email">Work email</label>
+              <input type="email" id="f-email" name="email" placeholder="jordan@clinic.com" required>
+              <span class="err-msg">Please enter a valid work email.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field" data-field="clinic">
+              <label for="f-clinic">Clinic / practice name</label>
+              <input type="text" id="f-clinic" name="clinic" placeholder="Riverside Family Clinic" required>
+              <span class="err-msg">Please enter your clinic name.</span>
+            </div>
+            <div class="field" data-field="type">
+              <label for="f-type">Practice type</label>
+              <select id="f-type" name="type" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Medical Clinic</option>
+                <option>Dental</option>
+                <option>Med Spa</option>
+                <option>Chiropractic</option>
+                <option>Other</option>
+              </select>
+              <span class="err-msg">Please select a practice type.</span>
+            </div>
+          </div>
+
+          <div class="field full-field">
+            <label for="f-system">Current scheduling / practice management system <span>(optional)</span></label>
+            <input type="text" id="f-system" name="system" placeholder="e.g. Dentrix, Curve, or none yet">
+          </div>
+
+          <div class="field full-field" data-field="bottleneck">
+            <label for="f-bottleneck">Where is the biggest leak?</label>
+            <select id="f-bottleneck" name="bottleneck" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Missed calls</option>
+              <option>Appointment scheduling</option>
+              <option>No-shows</option>
+              <option>Follow-ups</option>
+              <option>Lead qualification</option>
+              <option>Patient communication</option>
+              <option>Administrative work</option>
+              <option>Other</option>
+            </select>
+            <span class="err-msg">Please select an option.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Show me what to automate →</button>
+          <p class="form-note">We’ll use your answers to make the conversation relevant — not to send spam.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess" role="status">
+          <div class="check">✓</div>
+          <h3>Request received</h3>
+          <p>We’ll follow up at the email you provided to schedule your audit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="container"><div class="footer-top"><div class="footer-brand"><div class="logo"><span class="logo-mark">⌁</span> MedSwiff</div><p>Less repetitive work. More time for patients. Fewer missed opportunities.</p></div><div class="footer-cols"><div class="footer-col"><h5>Explore</h5><a href="#estimate">Calculate your loss</a><a href="#solution">What it automates</a><a href="#who-its-for">Solutions</a></div><div class="footer-col"><h5>Company</h5><a href="#founder">About</a><a href="#demo">Free workflow audit</a></div><div class="footer-col"><h5>Legal</h5><a href="#">Privacy</a><a href="#">Terms</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> MedSwiff. All rights reserved.</span><span>Built for modern clinic workflows.</span></div></div></footer>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGradFooter" x1="0" y1="0" x2="32" y2="32">
+                <stop offset="0%" stop-color="#35d6c4"/>
+                <stop offset="100%" stop-color="#9b8df5"/>
+              </linearGradient>
+            </defs>
+            <path d="M4 22C9 22 9 10 15 10C20 10 20 22 26 22" stroke="url(#logoGradFooter)" stroke-width="2.6" stroke-linecap="round"/>
+            <circle cx="4" cy="22" r="2.4" fill="#35d6c4"/>
+            <circle cx="26" cy="22" r="2.4" fill="#9b8df5"/>
+          </svg>
+          MedSwiff
+        </div>
+        <p>Less repetitive work. More time for patients. Fewer missed opportunities.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="#estimate">Calculate your loss</a>
+          <a href="#solution">What it automates</a>
+          <a href="#who-its-for">Solutions</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#founder">About</a>
+          <a href="#demo">Free workflow audit</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MedSwiff. All rights reserved.</span>
+      <span>Built for modern clinic workflows.</span>
+    </div>
+  </div>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
